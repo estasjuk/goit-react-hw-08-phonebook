@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 
 import { getUser } from '../../../redux/auth/auth-selectors';
 
-import css from './NavbarUser.module.css';
+//import css from './NavbarUser.module.css';
 
 const NavbarUser = () => {
   const { name } = useSelector(getUser);

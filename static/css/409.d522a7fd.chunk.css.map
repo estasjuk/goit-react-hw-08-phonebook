@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/409.d522a7fd.chunk.css","mappings":"AAAA,uBACE,aAAuB,CACvB,iBACF","sources":["pages/HomePage/Homepage.module.css"],"sourcesContent":[".title {\n  color: rgb(22, 97, 116);\n  text-align: center;\n}\n"],"names":[],"sourceRoot":""}

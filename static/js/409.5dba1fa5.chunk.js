@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[409],{5409:function(e,t,n){n.r(t),n.d(t,{default:function(){return c}});var r="Homepage_title__e1x5B",a=n(184),c=function(){return(0,a.jsx)(a.Fragment,{children:(0,a.jsx)("h1",{className:r,children:"Welcome to the ContactsBook App"})})}}}]);
-//# sourceMappingURL=409.5dba1fa5.chunk.js.map

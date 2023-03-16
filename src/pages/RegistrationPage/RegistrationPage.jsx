@@ -1,21 +1,14 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
-import { signup } from 'redux/auth/auth-operations';
-import { isUserLogin } from 'redux/auth/auth-selectors';
+import { signupUser } from 'redux/auth/auth-operations';
 
 import Registration from '../../components/Registration/Registration';
 
 const RegistrationPage = () => {
-  const isLogin = useSelector(isUserLogin);
   const dispatch = useDispatch();
   const handleSignup = data => {
-    dispatch(signup(data));
+    dispatch(signupUser(data));
   };
-
-  if (isLogin) {
-    return <Navigate to="/contacts" />;
-  }
 
   return (
     <>

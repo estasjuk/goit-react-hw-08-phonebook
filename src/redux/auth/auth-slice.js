@@ -1,6 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { signup, login } from './auth-operations';
+import {
+  signupUser,
+  loginUser,
+  getCurrentUser,
+  logoutUser,
+} from './auth-operations';
 
 const initialState = {
   user: {},
@@ -15,33 +20,63 @@ const authSlice = createSlice({
   initialState,
   extraReducers: builder => {
     builder
-      .addCase(signup.pending, state => {
+      .addCase(signupUser.pending, state => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(signup.fulfilled, (state, { payload }) => {
+      .addCase(signupUser.fulfilled, (state, { payload }) => {
         const { user, token } = payload;
         state.loading = false;
         state.user = user;
         state.token = token;
         state.isLogin = true;
       })
-      .addCase(signup.rejected, (state, { payload }) => {
+      .addCase(signupUser.rejected, (state, { payload }) => {
         state.loading = false;
         state.error = payload;
       })
-      .addCase(login.pending, state => {
+      .addCase(loginUser.pending, state => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(login.fulfilled, (state, { payload }) => {
+      .addCase(loginUser.fulfilled, (state, { payload }) => {
         const { user, token } = payload;
         state.loading = false;
         state.user = user;
         state.token = token;
         state.isLogin = true;
       })
-      .addCase(login.rejected, (state, { payload }) => {
+      .addCase(loginUser.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
+      })
+      .addCase(getCurrentUser.pending, state => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(getCurrentUser.fulfilled, (state, { payload }) => {
+        const { user, token } = payload;
+        state.loading = false;
+        state.user = user;
+        state.token = token;
+        state.isLogin = true;
+      })
+      .addCase(getCurrentUser.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.token = '';
+        state.error = payload;
+      })
+      .addCase(logoutUser.pending, state => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(logoutUser.fulfilled, state => {
+        state.loading = false;
+        state.user = {};
+        state.token = '';
+        state.isLogin = false;
+      })
+      .addCase(logoutUser.rejected, (state, { payload }) => {
         state.loading = false;
         state.error = payload;
       });

@@ -8,7 +8,6 @@ const NavbarAuth = () => {
       <NavLink to="/register" className={css.link}>
         Register
       </NavLink>{' '}
-      |
       <NavLink to="/login" className={css.link}>
         Login
       </NavLink>

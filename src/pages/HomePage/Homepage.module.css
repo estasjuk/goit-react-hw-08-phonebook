@@ -1,4 +1,27 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+  text-align: center;
+}
+
 .title {
+  font-size: 28px;
   color: rgb(22, 97, 116);
   text-align: center;
+}
+
+.text {
+  font-size: 20px;
+  font-weight: normal;
+  color: rgb(22, 97, 116);
+  text-align: center;
+}
+
+.icon {
+  margin: 0 auto;
+  width: 240px;
+  height: 240px;
+  color: rgb(22, 97, 116);
 }

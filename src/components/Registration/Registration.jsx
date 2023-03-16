@@ -5,7 +5,7 @@ import Button from 'shared/components/Button/Button/Button';
 import TextField from 'shared/components/TextField/TextField';
 import fields from './fields';
 
-//import css from './Registration.module.css';
+import css from './Registration.module.css';
 
 const Registration = ({ onSubmit }) => {
   const { state, handleChange, handleSubmit } = useForm({
@@ -15,7 +15,7 @@ const Registration = ({ onSubmit }) => {
   const { name, email, password } = state;
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={css.form} onSubmit={handleSubmit}>
       <TextField value={name} handleChange={handleChange} {...fields.name} />
       <TextField value={email} handleChange={handleChange} {...fields.email} />
       <TextField
@@ -23,7 +23,7 @@ const Registration = ({ onSubmit }) => {
         handleChange={handleChange}
         {...fields.password}
       />
-      <Button>Registration</Button>
+      <Button className={css.button}>Register</Button>
     </form>
   );
 };

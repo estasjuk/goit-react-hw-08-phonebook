@@ -16,6 +16,11 @@ const Navbar = () => {
       <NavLink to="/" className={css.link}>
         Home
       </NavLink>
+      {isLogin && (
+        <NavLink to="/my-contacts" className={css.link}>
+          Contacts
+        </NavLink>
+      )}
       {!isLogin && <NavbarAuth />}
       {isLogin && <NavbarUser />}
     </div>

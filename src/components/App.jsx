@@ -1,32 +1,30 @@
-import { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import Loader from 'shared/components/Loader/Loader';
-import store from '../redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
 
-const Navbar = lazy(() => import('./Navbar/Navbar'));
-const HomePage = lazy(() => import('pages/HomePage/HomePage'));
-const RegistrationPage = lazy(() =>
-  import('pages/RegistrationPage/RegistrationPage')
-);
-const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
-const MyContactsPage = lazy(() =>
-  import('pages/MyContactsPage/MyContactsPage')
-);
+import AuthLayout from '../components/AuthLayout/AuthLayout';
+import Navbar from '../components/Navbar/Navbar';
+import UserRoutes from './UserRoutes';
 
-export const App = () => {
+import { store, persistor } from '../redux/store';
+
+import css from './App.module.css';
+
+function App() {
   return (
     <Provider store={store}>
-      <Navbar />
-      <Suspense fallback={<Loader />}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/register" element={<RegistrationPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/contacts" element={<MyContactsPage />} />
-          <Route path="*" element={<HomePage />} />
-        </Routes>
-      </Suspense>
+      <PersistGate loading={null} persistor={persistor}>
+        <AuthLayout>
+          <BrowserRouter basename="/goit-react-hw-08-phonebook">
+            <div className={css.wrapper}>
+              <Navbar />
+              <UserRoutes />
+            </div>
+          </BrowserRouter>
+        </AuthLayout>
+      </PersistGate>
     </Provider>
   );
-};
+}
+
+export default App;

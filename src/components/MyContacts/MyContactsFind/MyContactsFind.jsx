@@ -5,7 +5,7 @@ import css from './MyContactsFind.module.css';
 const MyContactsFind = ({ handleChange, value }) => {
   return (
     <div className={css.formGroup}>
-      <label>Find contact by name</label>
+      <label className={css.label}>Find contact by name</label>
       <input
         className={css.input}
         name="filter"

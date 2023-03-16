@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: rgb(54, 90, 62);
+  color: rgb(22, 97, 116);
   font-size: 16px;
   font-weight: 700;
 }
@@ -19,15 +19,15 @@
   padding: 4px 24px;
   border: none;
   border-radius: 8px;
-  color: rgb(43, 46, 44);
-  background-color: rgb(87, 145, 101);
-  font-size: 1em;
+  color: #fff;
+  background-color: rgb(22, 97, 116);
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
   box-shadow: rgb(108 86 86) 1px 1px 5px;
 }
 
 .btn:hover,
 .btn:focus {
-  background-color: rgb(12, 75, 56);
-  color: white;
-  font-weight: bold;
+  background-color: rgb(8, 71, 88);
 }

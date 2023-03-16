@@ -7,3 +7,15 @@
   flex-direction: column;
   gap: 8px;
 }
+.input {
+  font-family: inherit;
+  padding: 6px;
+  color: rgb(22, 97, 116);
+  border: 1px solid rgb(22, 97, 116);
+  border-radius: 8px;
+}
+
+.label {
+  font-size: 20px;
+  color: rgb(22, 97, 116);
+}

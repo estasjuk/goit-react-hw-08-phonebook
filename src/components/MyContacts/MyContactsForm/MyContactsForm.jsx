@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
+import Button from 'shared/components/Button/Button/Button';
+
 import css from './MyContactsForm.module.css';
 
 const MyContactsForm = ({ onSubmit }) => {
@@ -30,7 +32,7 @@ const MyContactsForm = ({ onSubmit }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className={css.formGroup}>
-        <label>Name</label>
+        <label className={css.label}>Name</label>
         <input
           className={css.input}
           type="text"
@@ -43,7 +45,7 @@ const MyContactsForm = ({ onSubmit }) => {
           required
         />
 
-        <label>Number</label>
+        <label className={css.label}>Number</label>
         <input
           className={css.input}
           type="tel"
@@ -55,10 +57,7 @@ const MyContactsForm = ({ onSubmit }) => {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         />
-
-        <button className={css.btn} type="submit">
-          Add contact
-        </button>
+        <Button className={css.button}>Add contact</Button>
       </div>
     </form>
   );

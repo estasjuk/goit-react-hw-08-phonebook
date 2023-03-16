@@ -9,23 +9,30 @@
   box-shadow: rgb(143 143 143) 2px 4px 6px;
 }
 
-.btn {
-  padding: 4px 24px;
-  margin: 0 auto;
-  border: none;
-  border-radius: 8px;
-  color: rgb(43, 46, 44);
-  background-color: rgb(87, 145, 101);
-  font-size: 1em;
-  box-shadow: rgb(108 86 86) 1px 1px 5px;
-}
-
 .btn:hover,
 .btn:focus {
-  background-color: rgb(12, 75, 56);
+  background-color: rgb(22, 97, 116);
   color: white;
   font-weight: bold;
 }
+
+.field {
+  padding: 10px;
+  border: 1px solid rgb(22, 97, 116);
+  border-radius: 8px;
+  font-family: inherit;
+  color: rgb(22, 97, 116);
+}
+
 .input {
+  font-family: inherit;
   padding: 6px;
+  color: rgb(22, 97, 116);
+  border: 1px solid rgb(22, 97, 116);
+  border-radius: 8px;
+}
+
+.label {
+  font-size: 20px;
+  color: rgb(22, 97, 116);
 }

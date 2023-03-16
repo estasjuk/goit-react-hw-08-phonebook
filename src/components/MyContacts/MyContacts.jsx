@@ -56,7 +56,7 @@ const MyContacts = () => {
             contacts={filteredContacts}
           />
         )}
-        {!isContacts && <p>No contacts in the list</p>}
+        {!isContacts && <p className={css.text}>No contacts in the list</p>}
         <MyContactList />
       </div>
     </div>

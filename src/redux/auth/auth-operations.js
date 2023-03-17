@@ -41,51 +41,13 @@ export const loginUser = createAsyncThunk(
   }
 );
 
-// export const getCurrentUser = createAsyncThunk(
-//   'auth/current',
-//   async (_, thunkAPI) => {
-//     const state = thunkAPI.getState();
-//     const persistedToken = state.auth.token;
-
-//     if (persistedToken === null) {
-//       return thunkAPI.rejectWithValue('Fetching user error');
-//     }
-//     try {
-//       setToken(persistedToken);
-//       const response = await instance.get('/users/current');
-//       return response.data;
-//     } catch ({ response }) {
-//       setToken();
-//       return thunkAPI.rejectWithValue(response);
-//     }
-//   }
-// );
-
-// export const getCurrentUser = createAsyncThunk(
-//   'auth/current',
-//   async (_, { rejectWithValue, getState }) => {
-//     try {
-//       const { auth } = getState();
-//       const { data } = await getCurrent(auth.token);
-//       return data;
-//     } catch ({ response }) {
-//       return rejectWithValue(response);
-//     }
-//   },
-//   {
-//     condition: (_, { getState }) => {
-//       const { auth } = getState();
-//       if (!auth.token) {
-//         return false;
-//       }
-//     },
-//   }
-// );
-
 export const getCurrentUser = createAsyncThunk(
   'auth/current',
-  async (_, { rejectWithValue, getState }) => {
-    const { auth } = getState();
+  async (_, thunkAPI) => {
+    //console.log(thunkAPI);
+    //console.log(thunkAPI.getState());
+    const { auth } = thunkAPI.getState();
+    //console.log(auth);
     const persistedToken = auth.token;
     try {
       setToken(persistedToken);
@@ -93,7 +55,7 @@ export const getCurrentUser = createAsyncThunk(
       return response.data;
     } catch ({ response }) {
       setToken();
-      return rejectWithValue(response);
+      return thunkAPI.rejectWithValue(response);
     }
   },
   {

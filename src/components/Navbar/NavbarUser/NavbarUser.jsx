@@ -8,7 +8,8 @@ import css from './NavbarUser.module.css';
 
 const NavbarUser = () => {
   const dispatch = useDispatch();
-  const { name } = useSelector(getUser);
+  const state = useSelector(getUser);
+  console.log(state);
 
   const onLogout = () => {
     dispatch(logoutUser());
@@ -16,7 +17,7 @@ const NavbarUser = () => {
 
   return (
     <div>
-      {name},{' '}
+      {/* {auth.user.name},{' '} */}
       <button className={css.button} onClick={onLogout}>
         Logout
       </button>

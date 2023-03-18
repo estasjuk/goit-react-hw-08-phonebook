@@ -16,7 +16,7 @@ const NavbarUser = () => {
 
   return (
     <div>
-      <span>{user.name}</span>,{' '}
+      <span className={css.text}>{user.name},</span>{' '}
       <button className={css.button} onClick={onLogout}>
         Logout
       </button>

@@ -39,3 +39,7 @@
 .button:focus {
   color: #831d1d;
 }
+
+.text {
+  color: #fff;
+}

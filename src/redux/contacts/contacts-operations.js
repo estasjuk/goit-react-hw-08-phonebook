@@ -1,8 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { instance } from '../auth/auth-operations';
 
-//import * as api from '../../shared/services/contacts';
-
 export const fetchAllContacts = createAsyncThunk(
   'contacts/fetch-all',
   async (_, { rejectWithValue }) => {
